@@ -69,7 +69,8 @@ masterApp.controller('TaskListController', function($scope)
 
 masterApp.controller('TaskAddController', function($scope)
 {
-		
+	$scope.tasks = [];
+
 	$scope.addTask = function()
 	{	
 		$scope.tasks.push({
@@ -81,6 +82,14 @@ masterApp.controller('TaskAddController', function($scope)
 
 		$scope.task.name = "";
 		$scope.task.duration = "";
+
+	};
+
+	$scope.removeTask = function(task)
+	{	
+		var removeTask = $scope.tasks.indexOf(task);
+		$scope.tasks.splice(removeTask, 1);
+
 	};
 
 });

@@ -6,7 +6,7 @@
 	    </div>
 	    <div class="form-group">
 	      <label>Task Duration</label>
-	      <input type="number" class="form-control" placeholder="Enter Task Duration" ng-model="task.duration">
+	      <input type="text" class="form-control" placeholder="Enter Task Duration" ng-model="task.duration">
 	    </div>
 	    <button type="submit" class="btn btn-default">Submit</button>
   </form>
@@ -20,12 +20,14 @@
       <tr>
         <th>Task Name</th>
         <th>Task Duration</th>
+        <th>Action</th>
       </tr>
     </thead>
     <tbody>
-      <tr class="active" ng-repeat="task in tasks" ng-show="task.available">
+      <tr class="active" ng-repeat="task in tasks">
         <td>{{ task.name }}</td>
         <td>{{ task.duration }}</td>
+        <td><a class="remove" href="" ng-click="removeTask(task)">X</a></td>
       </tr>
     </tbody>
 </div>
