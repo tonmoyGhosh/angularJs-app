@@ -1,7 +1,6 @@
 var masterApp = angular.module('masterApp', ['ngRoute']);
 
 // Route Configure
-
 masterApp.config(['$routeProvider', function($routeProvider)
 {
 	$routeProvider
@@ -27,7 +26,6 @@ masterApp.config(['$routeProvider', function($routeProvider)
 }]);
 
 // Active & In Active Task List Controller Configure
-
 masterApp.controller('TaskListController', function($scope)
 {
 	$scope.tasks = [
@@ -66,11 +64,11 @@ masterApp.controller('TaskListController', function($scope)
 });
 
 // Add Task Controller Configure
-
 masterApp.controller('TaskAddController', function($scope)
 {
 	$scope.tasks = [];
 
+	// Add Task
 	$scope.addTask = function()
 	{	
 		$scope.tasks.push({
@@ -85,6 +83,7 @@ masterApp.controller('TaskAddController', function($scope)
 
 	};
 
+	// Remove Task
 	$scope.removeTask = function(task)
 	{	
 		var removeTask = $scope.tasks.indexOf(task);
@@ -92,5 +91,13 @@ masterApp.controller('TaskAddController', function($scope)
 
 	};
 
-});
+	// Order By Duration
+	$scope.orderDuration = 'duration';
+	$scope.orderByDuration = function(orderDurationVal)
+	{
+		if(orderDurationVal == 'duration') return $scope.orderDuration = '-duration';
+		else return $scope.orderDuration = 'duration';
+		
+	};
 
+});

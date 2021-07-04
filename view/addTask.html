@@ -14,17 +14,21 @@
 
 <br><br> 
 
+ Search By Name <input type="text" ng-model="name">
+
+<br><br> 
+
 <div class="table data">
 	<table class="table">
     <thead>
       <tr>
         <th>Task Name</th>
-        <th>Task Duration</th>
+        <th>Task Duration<a href="" ng-click="orderDuration = orderByDuration(orderDuration)"> &#8593;&#8595;</a></th>
         <th>Action</th>
       </tr>
     </thead>
     <tbody>
-      <tr class="active" ng-repeat="task in tasks">
+      <tr class="active" ng-repeat="task in tasks | orderBy: orderDuration | filter: name">
         <td>{{ task.name }}</td>
         <td>{{ task.duration }}</td>
         <td><a class="remove" href="" ng-click="removeTask(task)">X</a></td>
