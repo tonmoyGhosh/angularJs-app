@@ -1,6 +1,6 @@
 var masterApp = angular.module('masterApp', ['ngRoute']);
 
-// Route Configure
+// Route Config
 masterApp.config(['$routeProvider', function($routeProvider)
 {
 	$routeProvider
@@ -25,7 +25,7 @@ masterApp.config(['$routeProvider', function($routeProvider)
 
 }]);
 
-// Active & In Active Task List Controller Configure
+// Active & In Active Task List Controller Config
 masterApp.controller('TaskListController', function($scope)
 {
 	$scope.tasks = [
@@ -63,7 +63,7 @@ masterApp.controller('TaskListController', function($scope)
 
 });
 
-// Add Task Controller Configure
+// Add Task Controller Config
 masterApp.controller('TaskAddController', function($scope)
 {
 	$scope.tasks = [];
