@@ -8,27 +8,28 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
   <script src="https://code.angularjs.org/1.8.2/angular-route.min.js"></script>
   <script src="module/masterApp.js"></script>
+  <script src="route/masterAppRoute.js"></script>
 
 </head>
 
-<body ng-controller="ItemListController">
+<body>
 
 	<div class="nav-menu">
-	  <nav class="navbar navbar-inverse">
-	    <div class="container-fluid">
-	      <div class="navbar-header">
-	        <a class="navbar-brand" href="#">Home</a>
-	      </div>
-	      <ul class="nav navbar-nav">
-	        <li><a href="#">List Item</a></li>
-	        <li><a href="#">Add Item</a></li>
-	      </ul>
-	    </div>
-	  </nav>
-	 </div>
+		<nav class="navbar navbar-inverse">
+		    <div class="container-fluid">
+		      <div class="navbar-header">
+		        <a class="navbar-brand" href="#!/home">Home</a>
+		      </div>
+		      <ul class="nav navbar-nav">
+		        <li><a href="#!/listItem">List Item</a></li>
+		        <li><a href="#!/addItem">Add Item</a></li>
+		      </ul>
+		    </div>
+		</nav>
+	</div>
 
 	<div class="container">
-	  	{{ message }}
+	  	<main ng-view></main>
 	</div>
 
 </body>
