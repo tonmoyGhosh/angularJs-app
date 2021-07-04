@@ -1,0 +1,15 @@
+<div class="table data">
+	<table class="table">
+    <thead>
+      <tr>
+        <th>Task Name</th>
+        <th>Task Duration</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="active" ng-repeat="task in tasks" ng-show="!task.available">
+        <td>{{ task.name }}</td>
+        <td>{{ task.duration }}</td>
+      </tr>
+    </tbody>
+</div>
